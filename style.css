@@ -1,0 +1,147 @@
+/* custom fonts from Google */
+
+.fira-sans-bold {
+  /* title font */
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.dm-serif-text-regular {
+  /* heading font */
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nunito {
+  /* body font */
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 2.5rem 0rem 0rem 0rem;
+  font-size: 4rem;
+  font-family: Fira Sans;
+  color: #4d3328;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-family: DM Serif Text;
+  color: #991218;
+}
+
+p {
+  margin: 1rem 0rem;
+  font-size: 1.2rem;
+  font-family: Nunito;
+}
+
+li {
+  margin: 0.5rem 1rem;
+  font-size: 1.2rem;
+  font-family: Nunito;
+}
+
+a {
+  color: #991218;
+}
+
+body {
+  background: #ffe0b5;
+}
+
+header {
+  display: grid; /* enable hero image to display correctly */
+  text-align: center;
+}
+
+main {
+  padding: 1rem;
+  width: 75%;
+  margin: auto;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+}
+
+footer > p {
+  font-size: 1rem;
+  margin: 0.5rem;
+}
+
+#about,
+#ingredients,
+#instructions {
+  /* organize content in 2x1 flexbox rows */
+  display: flex;
+  padding: 1rem 0rem;
+  gap: 2rem;
+}
+
+#hero {
+  /* style hero image to take up full screen width */
+  width: 100vw;
+  height: 60vh;
+  grid-row: 1;
+  object-fit: cover;
+  object-position: center 50%;
+}
+
+.card {
+  width: 50%;
+  background: #ffebcb;
+  padding: 2rem;
+  /* code for corner cutouts taken from https://css-generators.com/custom-corners/ */
+  mask: radial-gradient(1.5rem at 1.5rem 1.5rem, #0000 98%, #000) -1.5rem -1.5rem;
+}
+
+img.card {
+  background: #fff4e4;
+  object-fit: cover;
+  /* code for stamp border taken from https://css-shape.com/stamp/ */
+  mask: radial-gradient(50% 50%, #0000 66%, #000 67%) round var(--r) var(--r) /
+      calc(2 * var(--r)) calc(2 * var(--r)),
+    conic-gradient(#000 0 0) content-box;
+  --r: 1.5rem;
+}
+
+.tagline {
+  margin: 0.5rem 0rem;
+  font-size: 1.4rem;
+  color: #991218;
+}
+
+/* mobile layout */
+@media (max-width: 782px) {
+  #about,
+  #ingredients,
+  #instructions {
+    display: grid;
+  }
+
+  .card {
+    width: 80%;
+    margin: auto;
+  }
+
+  main {
+    margin: auto;
+  }
+
+  img {
+    /* always display image after text when viewing single column on mobile */
+    grid-row: 2;
+  }
+}
